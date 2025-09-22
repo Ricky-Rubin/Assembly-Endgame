@@ -28,4 +28,23 @@ header > p {
   width: 310px;
   font-weight: 400;
   color: #8E8E8E;
+  margin: auto;
+}
+
+section {
+  width: 500px;
+  padding: 6px 0px;
+  border-radius: 8px;
+  margin-top: 30px;
+  background-color: #009432;
+  color: #F9F4DA;
+}
+
+section > h2 {
+  text-align: center;
+}
+
+section > p {
+  margin-top: -12px;
+  text-align: center;
 }
