@@ -14,3 +14,18 @@ body {
   background-color: #262626;
   font-family: Bricolage Grotesque;
 }
+
+header {
+  text-align: center;
+}
+
+header > h2 {
+  color: #F9F4DA;
+}
+
+header > p {
+  font-size: 13px;
+  width: 310px;
+  font-weight: 400;
+  color: #8E8E8E;
+}
