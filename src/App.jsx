@@ -7,9 +7,14 @@ export default function App() {
 
   const [currentWord, setCurrentWord] = React.useState('react');
 
+  const alphabets = "abcdefghijklmnopqrstuvwxyz"
+  const splitAlphabets = alphabets.split('').map((eachLetter) => {
+    return <button key={eachLetter} className="alphabet">{eachLetter.toUpperCase()}</button>
+  })
+
   const wordSplit = currentWord.split('');
-  const mappedSplit = wordSplit.map((letter) => {
-    return <span className="split-word-letters">{letter.toUpperCase()}</span>
+  const mappedSplit = wordSplit.map((letter, index) => {
+    return <span key={index} className="split-word-letters">{letter.toUpperCase()}</span>
   })
 
   const mappedChips = Language.map((chip, index) => {
@@ -31,6 +36,10 @@ export default function App() {
 
       <div className="word-display">
         {mappedSplit}
+      </div>
+
+      <div className="for-alphabets">
+        {splitAlphabets}
       </div>
     </main>
   )
