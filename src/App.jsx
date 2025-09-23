@@ -4,7 +4,7 @@ import { Language } from "./Language.js"
 
 export default function App() {
   const mappedChips = Language.map((chip, index) => {
-    return <div key={index} className="chip-case">{chip.name}</div>
+    return <div style={{ backgroundColor: chip.backgroundColor, color: chip.color }} key={index} className="chip-case">{chip.name}</div>
   })
 
   return (
@@ -17,7 +17,7 @@ export default function App() {
       </section>
 
       <div className="chip-container">
-        {mappedChips}
+        <div className="sub-container">{mappedChips}</div>
       </div>
     </main>
   )

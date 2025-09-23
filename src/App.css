@@ -48,3 +48,23 @@ section > p {
   margin-top: -12px;
   text-align: center;
 }
+
+.chip-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.chip-case {
+  padding: 4px 6px;
+  margin: 0px 1px;
+  border-radius: 5px;
+}
+
+.sub-container {
+  max-width: 390px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
