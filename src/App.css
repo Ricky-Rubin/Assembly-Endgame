@@ -68,3 +68,18 @@ section > p {
   justify-content: center;
   gap: 5px;
 }
+
+.word-display {
+  display: flex;
+  justify-content: center;
+  margin-top: 47px;
+  gap: 5px;
+}
+
+.split-word-letters {
+  padding: 11px 17px;
+  background-color: #323232;
+  border-bottom: 1px solid #F9F4DA;
+  font-size: 17px;
+  font-weight: 500;
+}
