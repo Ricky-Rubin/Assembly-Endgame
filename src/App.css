@@ -32,7 +32,7 @@ header > p {
   margin: auto;
 }
 
-section {
+.result {
   width: 500px;
   padding: 1px 0px;
   border-radius: 8px;
@@ -41,11 +41,11 @@ section {
   color: #F9F4DA;
 }
 
-section > h2 {
+.result > h2 {
   text-align: center;
 }
 
-section > p {
+.result > p {
   margin-top: -12px;
   text-align: center;
 }
@@ -108,4 +108,23 @@ section > p {
   cursor: pointer;
   background-color: #FCBA29;
   font-weight: 540;
+}
+
+.for-new-game {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 55px;
+}
+
+.new-game {
+  width: 250px;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: skyblue;
+  border: none;
+  outline: 1px solid #F9F4DA;
+  outline-offset: 2px;
 }

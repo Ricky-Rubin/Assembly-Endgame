@@ -6,10 +6,18 @@ import { Language } from "./Language.js"
 export default function App() {
 
   const [currentWord, setCurrentWord] = React.useState('react');
+  const [clickedLetter, setClickedLetter] = React.useState([]);
+  
+    function forClickedLetter(event) {
+    const clicked= event.target.textContent;
+    setClickedLetter((prev) => {
+      return [...prev, clicked]
+    })
+  }
 
   const alphabets = "abcdefghijklmnopqrstuvwxyz"
   const splitAlphabets = alphabets.split('').map((eachLetter) => {
-    return <button key={eachLetter} className="alphabet">{eachLetter.toUpperCase()}</button>
+    return <button onClick={forClickedLetter} key={eachLetter} className="alphabet">{eachLetter.toUpperCase()}</button>
   })
 
   const wordSplit = currentWord.split('');
@@ -41,6 +49,10 @@ export default function App() {
       <div className="for-alphabets">
         {splitAlphabets}
       </div>
+
+      <section className='for-new-game'>
+        <button className="new-game">New Game</button>
+      </section>
     </main>
   )
 }
