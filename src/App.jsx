@@ -7,13 +7,6 @@ export default function App() {
 
   const [currentWord, setCurrentWord] = React.useState('react');
   const [clickedLetter, setClickedLetter] = React.useState([]);
-  
-    function forClickedLetter(event) {
-    const clicked= event.target.textContent;
-    setClickedLetter((prev) => {
-      return [...prev, clicked]
-    })
-  }
 
   const alphabets = "abcdefghijklmnopqrstuvwxyz"
   const splitAlphabets = alphabets.split('').map((eachLetter) => {
@@ -28,6 +21,13 @@ export default function App() {
   const mappedChips = Language.map((chip, index) => {
     return <div style={{ backgroundColor: chip.backgroundColor, color: chip.color }} key={index} className="chip-case">{chip.name}</div>
   })
+
+    function forClickedLetter(event) {
+    const clicked = event.target.textContent;
+    setClickedLetter((prev) => {
+      return [...prev, clicked]
+    })
+  }
 
   return (
     <main>
