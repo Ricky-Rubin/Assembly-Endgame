@@ -95,7 +95,7 @@ header > p {
   margin: auto;
 }
 
-.alphabet {
+#alphabet {
   width: 36px;
   height: 36px;
   /* background-color: #3c6382; */
@@ -127,4 +127,12 @@ header > p {
   border: none;
   outline: 1px solid #F9F4DA;
   outline-offset: 2px;
+}
+
+#alphabet.correct {
+  background-color: #10A95B;
+}
+
+#alphabet.wrong {
+  background-color: #EC5D49;
 }

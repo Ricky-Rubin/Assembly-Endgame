@@ -2,27 +2,36 @@ import './App.css'
 import React from "react"
 import Header from "./Header.jsx"
 import { Language } from "./Language.js"
+import { clsx } from "clsx"
 
 export default function App() {
 
   const [currentWord, setCurrentWord] = React.useState('react');
   const [clickedLetter, setClickedLetter] = React.useState([]);
 
-  const alphabets = "abcdefghijklmnopqrstuvwxyz"
-  const splitAlphabets = alphabets.split('').map((eachLetter) => {
-    return <button onClick={forClickedLetter} key={eachLetter} className="alphabet">{eachLetter.toUpperCase()}</button>
-  })
-
   const wordSplit = currentWord.split('');
   const mappedSplit = wordSplit.map((letter, index) => {
     return <span key={index} className="split-word-letters">{letter.toUpperCase()}</span>
+  })
+
+  const alphabets = "abcdefghijklmnopqrstuvwxyz"
+  const splitAlphabets = alphabets.split('').map((eachLetter) => {
+    const isGuessed = clickedLetter.includes(eachLetter.toUpperCase());
+    const correctGuess = isGuessed && wordSplit.includes(eachLetter);
+    const wrongGuess = isGuessed && !wordSplit.includes(eachLetter);
+    const className = clsx({
+      correct: correctGuess,
+      wrong: wrongGuess
+    })
+
+    return <button className={className} onClick={forClickedLetter} key={eachLetter} id="alphabet">{eachLetter.toUpperCase()}</button>
   })
 
   const mappedChips = Language.map((chip, index) => {
     return <div style={{ backgroundColor: chip.backgroundColor, color: chip.color }} key={index} className="chip-case">{chip.name}</div>
   })
 
-    function forClickedLetter(event) {
+  function forClickedLetter(event) {
     const clicked = event.target.textContent;
     setClickedLetter((prev) => {
       return [...prev, clicked]
