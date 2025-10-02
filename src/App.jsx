@@ -11,14 +11,16 @@ export default function App() {
 
   const wordSplit = currentWord.split('');
   const mappedSplit = wordSplit.map((letter, index) => {
-    return <span key={index} className="split-word-letters">{letter.toUpperCase()}</span>
+    return <div key={index} className="split-word-letters">{clickedLetter.includes(letter.toUpperCase()) ? letter.toUpperCase() : ""}</div>
   })
 
   const alphabets = "abcdefghijklmnopqrstuvwxyz"
   const splitAlphabets = alphabets.split('').map((eachLetter) => {
+
     const isGuessed = clickedLetter.includes(eachLetter.toUpperCase());
     const correctGuess = isGuessed && wordSplit.includes(eachLetter);
     const wrongGuess = isGuessed && !wordSplit.includes(eachLetter);
+
     const className = clsx({
       correct: correctGuess,
       wrong: wrongGuess

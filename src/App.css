@@ -79,11 +79,15 @@ header > p {
 }
 
 .split-word-letters {
-  padding: 11px 17px;
   background-color: #323232;
   border-bottom: 1px solid #F9F4DA;
   font-size: 17px;
   font-weight: 500;
+  width: 40px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .for-alphabets {
