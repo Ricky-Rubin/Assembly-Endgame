@@ -14,6 +14,9 @@ export default function App() {
     return <div key={index} className="split-word-letters">{clickedLetter.includes(letter.toUpperCase()) ? letter.toUpperCase() : ""}</div>
   })
 
+  const wrongGuessCount = clickedLetter.filter((letter) => !wordSplit.map(one => one.toUpperCase()).includes(letter)).length;
+  console.log(wrongGuessCount)
+
   const alphabets = "abcdefghijklmnopqrstuvwxyz"
   const splitAlphabets = alphabets.split('').map((eachLetter) => {
 

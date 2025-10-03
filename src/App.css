@@ -135,8 +135,10 @@ header > p {
 
 #alphabet.correct {
   background-color: #10A95B;
+  color: white;
 }
 
 #alphabet.wrong {
   background-color: #EC5D49;
+  color: white;
 }
