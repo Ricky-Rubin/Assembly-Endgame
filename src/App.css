@@ -37,8 +37,8 @@ header > p {
   padding: 1px 0px;
   border-radius: 8px;
   margin-top: 30px;
-  background-color: #009432;
   color: #F9F4DA;
+  height: 95px;
 }
 
 .result > h2 {
@@ -48,6 +48,14 @@ header > p {
 .result > p {
   margin-top: -12px;
   text-align: center;
+}
+
+.win {
+  background-color: #10A95B;
+}
+
+.lose {
+  background-color: #BA2A2A;
 }
 
 .chip-container {

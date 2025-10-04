@@ -51,13 +51,29 @@ export default function App() {
     })
   }
 
+  const gameOverMessage = clsx("result", {
+    win: isGameWon,
+    lose: isGameLost
+  })
+
   return (
     <main>
       <Header />
 
-      <section className="result">
-        <h2>You Win!</h2>
-        <p>Well done 🎉</p>
+      <section className={gameOverMessage}>
+        {isGameOver ? (
+          isGameWon ? 
+          (<>
+            <h2>You Win!</h2>
+            <p>Well done 🎉</p>
+          </>) : 
+
+          (
+            <>
+              <h2>Game over!</h2>
+              <p>You lose! Better start learning Assembly 😭</p>
+            </>
+          )) : null}
       </section>
 
       <div className="chip-container">
