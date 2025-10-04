@@ -33,7 +33,11 @@ export default function App() {
   })
 
   const mappedChips = Language.map((chip, index) => {
-    return <div style={{ backgroundColor: chip.backgroundColor, color: chip.color }} key={index} className="chip-case">{chip.name}</div>
+    const isLost = index < wrongGuessCount;
+    const className = clsx({
+      lost: isLost
+    })
+    return <div style={{ backgroundColor: chip.backgroundColor, color: chip.color }} key={index} id="chip-case" className={className}>{chip.name}</div>
   })
 
   function forClickedLetter(event) {

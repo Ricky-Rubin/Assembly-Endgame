@@ -56,10 +56,25 @@ header > p {
   justify-content: center;
 }
 
-.chip-case {
+#chip-case {
   padding: 4px 6px;
   margin: 0px 1px;
   border-radius: 5px;
+  position: relative;
+}
+
+.lost::before {
+  content: "💀";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  font-size: 0.85rem;
+  background-color: rgba(20, 15, 15, 0.7);
 }
 
 .sub-container {
