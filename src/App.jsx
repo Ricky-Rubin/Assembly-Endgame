@@ -37,6 +37,7 @@ export default function App() {
     const className = clsx({
       lost: isLost
     })
+
     return <div style={{ backgroundColor: chip.backgroundColor, color: chip.color }} key={index} id="chip-case" className={className}>{chip.name}</div>
   })
 
