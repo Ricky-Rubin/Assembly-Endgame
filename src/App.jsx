@@ -15,7 +15,10 @@ export default function App() {
   })
 
   const wrongGuessCount = clickedLetter.filter((letter) => !wordSplit.map(one => one.toUpperCase()).includes(letter)).length;
-  console.log(wrongGuessCount)
+
+  const isGameWon = currentWord.toUpperCase().split("").every(letter => clickedLetter.includes(letter))
+  const isGameLost = wrongGuessCount >= Language.length - 1;
+  const isGameOver = isGameWon || isGameLost;
 
   const alphabets = "abcdefghijklmnopqrstuvwxyz"
   const splitAlphabets = alphabets.split('').map((eachLetter) => {
@@ -70,7 +73,7 @@ export default function App() {
       </div>
 
       <section className='for-new-game'>
-        <button className="new-game">New Game</button>
+        {isGameOver && <button className="new-game">New Game</button>}
       </section>
     </main>
   )
