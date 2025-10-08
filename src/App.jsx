@@ -70,7 +70,7 @@ export default function App() {
       <Header />
 
       <section className={gameOverMessage}>
-        {!isGameOver && farewellMessage && <p>{farewellMessage}</p>}
+        {!isGameOver && farewellMessage && <p className="farewell-text">{farewellMessage}</p>}
 
         {isGameOver ? (
           isGameWon ? 
