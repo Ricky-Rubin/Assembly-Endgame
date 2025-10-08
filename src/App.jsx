@@ -51,6 +51,13 @@ export default function App() {
     setClickedLetter((prev) => {
       return [...prev, clicked]
     })
+
+    const isIncorrect = !wordSplit.map(one => one.toUpperCase()).includes(clicked)
+
+    if (isIncorrect) {
+      const chipToEliminate = Language[wrongGuessCount];
+      setFarewellMessage(getFarewellMessage(chipToEliminate.name))
+    }
   }
 
   const gameOverMessage = clsx("result", {
@@ -63,6 +70,8 @@ export default function App() {
       <Header />
 
       <section className={gameOverMessage}>
+        {!isGameOver && farewellMessage && <p>{farewellMessage}</p>}
+
         {isGameOver ? (
           isGameWon ? 
           (<>
