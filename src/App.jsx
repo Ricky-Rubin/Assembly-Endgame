@@ -3,11 +3,13 @@ import React from "react"
 import Header from "./Header.jsx"
 import { Language } from "./Language.js"
 import { clsx } from "clsx"
+import { getFarewellMessage } from "./Utility.js" 
 
 export default function App() {
 
   const [currentWord, setCurrentWord] = React.useState('react');
   const [clickedLetter, setClickedLetter] = React.useState([]);
+  const [farewellMessage, setFarewellMessage] = React.useState('');
 
   const wordSplit = currentWord.split('');
   const mappedSplit = wordSplit.map((letter, index) => {
