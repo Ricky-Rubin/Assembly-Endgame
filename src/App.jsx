@@ -34,7 +34,7 @@ export default function App() {
       wrong: wrongGuess
     })
 
-    return <button className={className} onClick={forClickedLetter} key={eachLetter} id="alphabet">{eachLetter.toUpperCase()}</button>
+    return <button disabled={isGameOver} className={className} onClick={forClickedLetter} key={eachLetter} id="alphabet">{eachLetter.toUpperCase()}</button>
   })
 
   const mappedChips = Language.map((chip, index) => {
