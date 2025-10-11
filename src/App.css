@@ -137,6 +137,11 @@ header > p {
   font-weight: 540;
 }
 
+#alphabet:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .for-new-game {
   width: auto;
   display: flex;
