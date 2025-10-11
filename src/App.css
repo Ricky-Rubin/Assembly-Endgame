@@ -168,9 +168,10 @@ header > p {
 
 .farewell-text {
   height: 100px;
-  background-color: #10A95B;
+  background-color: #7A5EA7;
   text-align: center;
   line-height: 100px;
   border-radius: 8px;
-  color: black;
+  color: white;
+  font-style: italic;
 }
