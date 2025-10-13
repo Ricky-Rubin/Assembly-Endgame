@@ -13,15 +13,17 @@ export default function App() {
   const [farewellMessage, setFarewellMessage] = React.useState('');
 
   const wordSplit = currentWord.split('');
-  const mappedSplit = wordSplit.map((letter, index) => {
-    return <div key={index} className="split-word-letters">{clickedLetter.includes(letter.toUpperCase()) ? letter.toUpperCase() : ""}</div>
-  })
 
   const wrongGuessCount = clickedLetter.filter((letter) => !wordSplit.map(one => one.toUpperCase()).includes(letter)).length;
-
   const isGameWon = currentWord.toUpperCase().split("").every(letter => clickedLetter.includes(letter))
   const isGameLost = wrongGuessCount >= Language.length - 1;
   const isGameOver = isGameWon || isGameLost;
+
+  const mappedSplit = wordSplit.map((letter, index) => {
+    return <div key={index} className="split-word-letters">
+      {isGameLost ? letter.toUpperCase() : (clickedLetter.includes(letter.toUpperCase()) ? letter.toUpperCase() : "")}
+    </div>
+  })
 
   const alphabets = "abcdefghijklmnopqrstuvwxyz"
   const splitAlphabets = alphabets.split('').map((eachLetter) => {
