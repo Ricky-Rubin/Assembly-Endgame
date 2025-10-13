@@ -4,10 +4,11 @@ import Header from "./Header.jsx"
 import { Language } from "./Language.js"
 import { clsx } from "clsx"
 import { getFarewellMessage } from "./Utility.js" 
+import { getRandomWord } from "./Utility.js"
 
 export default function App() {
 
-  const [currentWord, setCurrentWord] = React.useState('react');
+  const [currentWord, setCurrentWord] = React.useState(() => getRandomWord());
   const [clickedLetter, setClickedLetter] = React.useState([]);
   const [farewellMessage, setFarewellMessage] = React.useState('');
 
@@ -104,6 +105,7 @@ export default function App() {
         {mappedSplit}
       </div>
 
+      {/* This is a combined visually-hidden aria-live region for status updates */}
       <section
         className="sr-only"
         aria-live="polite"
