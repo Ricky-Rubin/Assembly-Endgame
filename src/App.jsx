@@ -34,8 +34,17 @@ export default function App() {
       wrong: wrongGuess
     })
 
-    return <button disabled={isGameOver} className={className} onClick={forClickedLetter} key={eachLetter} id="alphabet">{eachLetter.toUpperCase()}</button>
-  })
+    return <button 
+              disabled={isGameOver} 
+              className={className} 
+              onClick={forClickedLetter} 
+              key={eachLetter} 
+              id="alphabet"
+              aria-disabled={clickedLetter.includes(eachLetter)}
+              aria-label={"Letter ${eachLetter}"}>
+                {eachLetter.toUpperCase()}
+            </button>
+  }) 
 
   const mappedChips = Language.map((chip, index) => {
     const isLost = index < wrongGuessCount;
@@ -69,7 +78,7 @@ export default function App() {
     <main>
       <Header />
 
-      <section className={gameOverMessage}>
+      <section aria-live="polite" role="status" className={gameOverMessage}>
         {!isGameOver && farewellMessage && <p className="farewell-text">{farewellMessage}</p>}
 
         {isGameOver ? (
@@ -94,6 +103,14 @@ export default function App() {
       <div className="word-display">
         {mappedSplit}
       </div>
+
+      <section
+        className="sr-only"
+        aria-live="polite"
+        role="status"
+      >
+        <p>Current word: {currentWord.split("").map(letter => clickedLetter.includes(letter) ? letter + "." : "blank.").join(" ")} </p>
+      </section>
 
       <div className="for-alphabets">
         {splitAlphabets}
