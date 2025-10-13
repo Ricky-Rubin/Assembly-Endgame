@@ -75,6 +75,12 @@ export default function App() {
     lose: isGameLost
   })
 
+  function resetGame() {
+    setCurrentWord(() => getRandomWord());
+    setClickedLetter([]);
+    setFarewellMessage('');
+  }
+
   return (
     <main>
       <Header />
@@ -125,7 +131,7 @@ export default function App() {
       </div>
 
       <section className='for-new-game'>
-        {isGameOver && <button className="new-game">New Game</button>}
+        {isGameOver && <button className="new-game" onClick={resetGame}>New Game</button>}
       </section>
     </main>
   )
