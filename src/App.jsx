@@ -109,7 +109,13 @@ export default function App() {
         aria-live="polite"
         role="status"
       >
-        <p>Current word: {currentWord.split("").map(letter => clickedLetter.includes(letter) ? letter + "." : "blank.").join(" ")} </p>
+        <p>
+          { currentWord.includes(clickedLetter[clickedLetter.length - 1]) ? `Correct! The lettter ${clickedLetter.length - 1} is in the word.` : `Sorry, the letter ${clickedLetter.length - 1} is not in the word.` }
+        </p>
+          You have {Language.length - 1} gueses left
+        <p>
+          Current word: {currentWord.split("").map(letter => clickedLetter.includes(letter) ? letter + "." : "blank.").join(" ")} 
+        </p>
       </section>
 
       <div className="for-alphabets">
