@@ -86,7 +86,7 @@ export default function App() {
 
   return (
     <main>
-      {isGameWon && <Confetti />}
+      {isGameWon && <Confetti recycle={false} numberOfPieces={1000} />}
 
       <Header />
 
