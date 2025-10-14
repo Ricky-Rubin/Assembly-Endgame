@@ -20,7 +20,7 @@ export default function App() {
   const isGameOver = isGameWon || isGameLost;
 
   const mappedSplit = wordSplit.map((letter, index) => {
-    return <div key={index} className="split-word-letters" style={{ opacity: clickedLetter.includes(letter.toUpperCase()) ? 1 : 0.5 }}>
+    return <div key={index} className="split-word-letters" style={{ opacity: clickedLetter.includes(letter.toUpperCase()) ? 1 : 0.9, color: clickedLetter.includes(letter.toUpperCase()) ? "#FFFFFF" : "#EC5D49" }}>
       {isGameLost ? letter.toUpperCase() : (clickedLetter.includes(letter.toUpperCase()) ? letter.toUpperCase() : "")}
     </div>
   })
