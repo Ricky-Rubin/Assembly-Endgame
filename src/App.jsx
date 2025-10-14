@@ -5,6 +5,7 @@ import { Language } from "./Language.js"
 import { clsx } from "clsx"
 import { getFarewellMessage } from "./Utility.js" 
 import { getRandomWord } from "./Utility.js"
+import Confetti from "react-confetti"
 
 export default function App() {
 
@@ -85,6 +86,8 @@ export default function App() {
 
   return (
     <main>
+      {isGameWon && <Confetti />}
+
       <Header />
 
       <section aria-live="polite" role="status" className={gameOverMessage}>
